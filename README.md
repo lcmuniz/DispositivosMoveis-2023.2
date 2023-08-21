@@ -1,0 +1,1 @@
+# DispositivosMoveis-2023.2
