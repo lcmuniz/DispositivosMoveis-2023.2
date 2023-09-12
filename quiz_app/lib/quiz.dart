@@ -14,6 +14,12 @@ class Quiz extends StatefulWidget {
 class _QuizState extends State<Quiz> {
   var activeScreen = 'start-screen';
 
+  void changeScreen() {
+    setState(() {
+      activeScreen = 'questions-screen';
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -31,7 +37,7 @@ class _QuizState extends State<Quiz> {
             ),
           ),
           child: activeScreen == 'start-screen'
-              ? const StartScreen()
+              ? StartScreen(changeScreen)
               : const QuestionsScreen(),
         ),
       ),
