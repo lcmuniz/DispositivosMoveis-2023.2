@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class TelaInicio extends StatelessWidget {
   const TelaInicio(this.iniciarQuiz, {super.key});
@@ -19,12 +20,12 @@ class TelaInicio extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          const Text(
+          Text(
             "Aprenda Flutter !",
-            style: TextStyle(
+            style: GoogleFonts.croissantOne(
               fontSize: 24,
               fontWeight: FontWeight.bold,
-              color: Color.fromARGB(255, 237, 223, 252),
+              color: const Color.fromARGB(255, 237, 223, 252),
             ),
           ),
           const SizedBox(

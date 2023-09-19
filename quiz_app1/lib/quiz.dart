@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/perguntas.dart';
 import 'package:quiz_app/screens/tela_perguntas.dart';
 import 'package:quiz_app/screens/tela_resultados.dart';
 import 'package:quiz_app/screens/tela_inicio.dart';
@@ -14,6 +15,22 @@ class Quiz extends StatefulWidget {
 
 class _QuizState extends State<Quiz> {
   var telaAtiva = 'tela-inicio';
+
+  List<String> respostasSelecionas = [];
+
+  void selecionarResposta(String resposta) {
+    respostasSelecionas.add(resposta);
+    print(respostasSelecionas.length);
+    if (respostasSelecionas.length == perguntas.length) {
+      respostasSelecionas.clear();
+    }
+  }
+
+  void irParaTelaDeInicio() {
+    setState(() {
+      telaAtiva = 'tela-inicio';
+    });
+  }
 
   void irParaTelaDePerguntas() {
     setState(() {
@@ -32,11 +49,11 @@ class _QuizState extends State<Quiz> {
     Widget tela = TelaInicio(irParaTelaDePerguntas);
 
     if (telaAtiva == 'tela-perguntas') {
-      tela = TelaPerguntas(irParaTeleDeResultados);
+      tela = TelaPerguntas(irParaTeleDeResultados, selecionarResposta);
     }
 
     if (telaAtiva == 'tela-resultados') {
-      tela = const TelaResultados();
+      tela = TelaResultados(irParaTelaDeInicio);
     }
 
     return MaterialApp(
