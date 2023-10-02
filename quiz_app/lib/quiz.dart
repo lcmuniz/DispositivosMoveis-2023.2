@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/questions.dart';
-import 'package:quiz_app/screens/questions_screen.dart';
-import 'package:quiz_app/screens/results_screen.dart';
-import 'package:quiz_app/screens/start_screen.dart';
+import 'package:quiz_app/perguntas.dart';
+import 'package:quiz_app/screens/tela_perguntas.dart';
+import 'package:quiz_app/screens/tela_resultados.dart';
+import 'package:quiz_app/screens/tela_inicio.dart';
 
 // a classe Quiz é a classe principal da aplicação/
 // responsável por chamar as duas telas conforme necessário
@@ -14,45 +14,46 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
-  var activeScreen = 'start-screen';
-  // LCMUNIZ2
-  final List<String> selectedAnswers = [];
+  var telaAtiva = 'tela-inicio';
 
-  //LCMUNIZ3
-  void chooseAnswer(String answer) {
-    selectedAnswers.add(answer);
-    //print(selectedAnswers.length);
-    // LCMUNIZ9
-    if (selectedAnswers.length == questions.length) {
-      setState(() {
-        activeScreen = 'results-screen';
-        // LCMUNIZ DEPOIS DE CRIAR RESULTS SCREEN COMENTA ESSA LINHA
-        //selectedAnswers.clear();
-      });
+  List<String> respostasSelecionas = [];
+
+  void selecionarResposta(String resposta) {
+    respostasSelecionas.add(resposta);
+    print(respostasSelecionas.length);
+    if (respostasSelecionas.length == perguntas.length) {
+      respostasSelecionas.clear();
     }
   }
 
-  void changeScreen() {
+  void irParaTelaDeInicio() {
     setState(() {
-      activeScreen = 'questions-screen';
+      telaAtiva = 'tela-inicio';
+    });
+  }
+
+  void irParaTelaDePerguntas() {
+    setState(() {
+      telaAtiva = 'tela-perguntas';
+    });
+  }
+
+  void irParaTeleDeResultados() {
+    setState(() {
+      telaAtiva = 'tela-resultados';
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    Widget screen = StartScreen(changeScreen);
+    Widget tela = TelaInicio(irParaTelaDePerguntas);
 
-    if (activeScreen == 'questions-screen') {
-      // LCMUNIZ4
-      screen = QuestionsScreen(
-        onSelectedAnswer: chooseAnswer,
-      );
+    if (telaAtiva == 'tela-perguntas') {
+      tela = TelaPerguntas(irParaTeleDeResultados, selecionarResposta);
     }
-    // LCMUNIZ11
-    if (activeScreen == 'results-screen') {
-      screen = ResultsScreen(
-        choosenAnswers: selectedAnswers,
-      );
+
+    if (telaAtiva == 'tela-resultados') {
+      tela = TelaResultados(irParaTelaDeInicio);
     }
 
     return MaterialApp(
@@ -69,7 +70,7 @@ class _QuizState extends State<Quiz> {
               ],
             ),
           ),
-          child: screen,
+          child: tela,
         ),
       ),
     );
