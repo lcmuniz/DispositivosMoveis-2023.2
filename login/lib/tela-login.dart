@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
 class TelaLogin extends StatelessWidget {
-  const TelaLogin({super.key});
+  TelaLogin(this.irPara, {super.key});
+
+  Function() irPara;
+
+  void logar() {
+    // login
+    irPara();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +51,7 @@ class TelaLogin extends StatelessWidget {
                 vertical: 10,
               ),
             ),
-            onPressed: () {},
+            onPressed: logar,
             child: const Text(
               'Entrar',
               style: TextStyle(fontSize: 20),
