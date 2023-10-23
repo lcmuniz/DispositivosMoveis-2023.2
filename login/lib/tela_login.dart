@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class TelaLogin extends StatelessWidget {
-  TelaLogin(this.irPara, {super.key});
+  const TelaLogin(this.irPara, {super.key});
 
-  Function() irPara;
+  final Function() irPara;
 
   void logar() {
     // login

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class TelaInicio extends StatelessWidget {
-  TelaInicio(this.irPara, {super.key});
+  const TelaInicio(this.irPara, {super.key});
 
-  Function() irPara;
+  final Function() irPara;
 
   @override
   Widget build(BuildContext context) {

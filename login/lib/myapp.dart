@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:login/tela-inicio.dart';
-import 'package:login/tela-login.dart';
+import 'package:login/tela_inicio.dart';
+import 'package:login/tela_login.dart';
 
 class MyApp extends StatefulWidget {
-  MyApp({super.key});
+  const MyApp({super.key});
 
   @override
   State<MyApp> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
-  var telaAtual;
+  Widget? telaAtual;
   void irParaTelaInicio() {
     setState(() {
       telaAtual = TelaInicio(irParaTelaInicio);
@@ -29,7 +29,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Padding(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           child: telaAtual,
         ),
       ),
