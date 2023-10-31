@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:receitas/data/dados.dart';
 import 'package:receitas/screens/categorias_screen.dart';
+import 'package:receitas/screens/receitas_screen.dart';
 
 void main() {
   runApp(const MyApp());
