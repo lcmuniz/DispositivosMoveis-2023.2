@@ -1,0 +1,21 @@
+GET http://localhost:3000/receitas/m2
+####
+
+POST http://localhost:3000/receitas 
+Content-Type: application/json
+
+{
+  "id": "rr",
+  "categorias": ["c1", "c2"],
+  "titulo": "asdasd", 
+  "acessibilidade": "asdasd", 
+  "complexidade": "asdasd", 
+  "url_imagem": "asdasd", 
+  "duracao": 12, 
+  "ingredientes": ["asd"],
+  "passos": ["asd", "asdasdsad"],
+  "sem_gluten": true, 
+  "vegano": false, 
+  "vegetariano": true, 
+  "sem_lactose": false
+}
