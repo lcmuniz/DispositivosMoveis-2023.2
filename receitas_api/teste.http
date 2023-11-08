@@ -5,7 +5,7 @@ POST http://localhost:3000/receitas
 Content-Type: application/json
 
 {
-  "id": "rr",
+  "id": "rx",
   "categorias": ["c1", "c2"],
   "titulo": "asdasd", 
   "acessibilidade": "asdasd", 
