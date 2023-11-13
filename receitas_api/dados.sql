@@ -22,16 +22,16 @@ create table receitas (
 
 insert into categorias (id, titulo, cor)
 values 
-  ('c1', 'Italiana', 'purple'),
-  ('c2', 'Rápido & Fácil', 'red'),
-  ('c3', 'Hamburgers', 'orange'),
-  ('c4', 'Alemã', 'amber'),
-  ('c5', 'Light', 'blue'),
-  ('c6', 'Exótica', 'green'),
-  ('c7', 'Café da manhã', 'lightblue'),
-  ('c8', 'Asiática', 'lightgreen'),
-  ('c9', 'Francesa', 'pink'),
-  ('c10', 'Verão', 'teal');
+  ('c1', 'Italiana', '454433'),
+  ('c2', 'Rápido & Fácil', '242222'),
+  ('c3', 'Hamburgers', '544344'),
+  ('c4', 'Alemã', '234223'),
+  ('c5', 'Light', '543434'),
+  ('c6', 'Exótica', '653433'),
+  ('c7', 'Café da manhã', '223222'),
+  ('c8', 'Asiática', '645433'),
+  ('c9', 'Francesa', '242232'),
+  ('c10', 'Verão', '434555');
 
 
 INSERT INTO receitas (id, categorias, titulo, acessibilidade, complexidade, url_imagem, duracao, ingredientes, passos, sem_gluten, vegano, vegetariano, sem_lactose)

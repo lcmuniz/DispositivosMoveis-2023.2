@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:receitas/models/categoria.dart';
 import 'package:receitas/models/receita.dart';
 
-const categoriasDisponiveis = [
+const xcategoriasDisponiveis = [
   Categoria(
     id: 'c1',
     titulo: 'Italiana',
