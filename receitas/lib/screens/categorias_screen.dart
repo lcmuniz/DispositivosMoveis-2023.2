@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'package:receitas/data/dados.dart';
 import 'package:receitas/models/categoria.dart';
@@ -8,7 +7,7 @@ import 'package:receitas/screens/receitas_screen.dart';
 import 'package:receitas/widgets/categoria_grid_item.dart';
 
 class CategoriasScreen extends StatefulWidget {
-  CategoriasScreen({super.key});
+  const CategoriasScreen({super.key});
 
   @override
   State<CategoriasScreen> createState() => _CategoriasScreenState();

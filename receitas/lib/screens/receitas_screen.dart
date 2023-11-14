@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:receitas/models/receita.dart';
+import 'package:receitas/screens/receita_screen.dart';
 import 'package:receitas/widgets/receita_list_item.dart';
 
 class ReceitasScreen extends StatelessWidget {
@@ -11,6 +12,13 @@ class ReceitasScreen extends StatelessWidget {
 
   final String titulo;
   final List<Receita> receitas;
+
+  void selecionarReceita(BuildContext context, Receita receita) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => ReceitaScreen(receita: receita)));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +44,9 @@ class ReceitasScreen extends StatelessWidget {
         itemCount: receitas.length,
         itemBuilder: (context, index) => ReceitaListItem(
           receita: receitas[index],
+          aoSelecionarReceita: (receita) {
+            selecionarReceita(context, receita);
+          },
         ),
       );
     }

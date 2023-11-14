@@ -1,60 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:receitas/models/categoria.dart';
 import 'package:receitas/models/receita.dart';
-
-const xcategoriasDisponiveis = [
-  Categoria(
-    id: 'c1',
-    titulo: 'Italiana',
-    cor: Colors.purple,
-  ),
-  Categoria(
-    id: 'c2',
-    titulo: 'Rápido & Fácil',
-    cor: Colors.red,
-  ),
-  Categoria(
-    id: 'c3',
-    titulo: 'Hamburgers',
-    cor: Colors.orange,
-  ),
-  Categoria(
-    id: 'c4',
-    titulo: 'Alemã',
-    cor: Colors.amber,
-  ),
-  Categoria(
-    id: 'c5',
-    titulo: 'Light',
-    cor: Colors.blue,
-  ),
-  Categoria(
-    id: 'c6',
-    titulo: 'Exótica',
-    cor: Colors.green,
-  ),
-  Categoria(
-    id: 'c7',
-    titulo: 'Café da manhã',
-    cor: Colors.lightBlue,
-  ),
-  Categoria(
-    id: 'c8',
-    titulo: 'Asiática',
-    cor: Colors.lightGreen,
-  ),
-  Categoria(
-    id: 'c9',
-    titulo: 'Francesa',
-    cor: Colors.pink,
-  ),
-  Categoria(
-    id: 'c10',
-    titulo: 'Verão',
-    cor: Colors.teal,
-  ),
-];
 
 const receitasDisponiveis = [
   Receita(

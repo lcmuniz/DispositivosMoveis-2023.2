@@ -4,14 +4,19 @@ import 'package:receitas/widgets/info_receita.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class ReceitaListItem extends StatelessWidget {
-  const ReceitaListItem({super.key, required this.receita});
+  const ReceitaListItem(
+      {super.key, required this.receita, required this.aoSelecionarReceita});
 
   final Receita receita;
+  final Function(Receita receita) aoSelecionarReceita;
 
   @override
   Widget build(BuildContext context) {
     return Card(
       child: InkWell(
+        onTap: () {
+          aoSelecionarReceita(receita);
+        },
         child: Stack(
           children: [
             FadeInImage(
