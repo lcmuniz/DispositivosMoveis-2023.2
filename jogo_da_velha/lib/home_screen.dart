@@ -26,7 +26,10 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.grey[900],
         actions: [
           IconButton(
-            icon: const Icon(Icons.refresh),
+            icon: const Icon(
+              Icons.refresh,
+              color: Colors.white,
+            ),
             onPressed: () {
               limparQuadro();
             },

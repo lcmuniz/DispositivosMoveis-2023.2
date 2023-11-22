@@ -31,7 +31,7 @@ class Placar extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 Text(
-                  pontosX.toString(),
+                  pontosO.toString(),
                   style: const TextStyle(
                       color: Colors.white,
                       fontSize: 25.0,
@@ -53,7 +53,7 @@ class Placar extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 Text(
-                  pontosO.toString(),
+                  pontosX.toString(),
                   style: const TextStyle(
                       color: Colors.white,
                       fontSize: 25.0,
