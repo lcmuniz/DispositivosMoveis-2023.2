@@ -16,7 +16,7 @@ class CategoriasScreen extends StatefulWidget {
 class _CategoriasScreenState extends State<CategoriasScreen> {
   late Future<List<Categoria>> futureCategorias;
   Future<List<Categoria>> fetchCategorias() async {
-    var uri = Uri.parse("http://192.168.157.243:3000/categorias");
+    var uri = Uri.parse("http://192.168.15.55:3000/categorias");
 
     var response = await http.get(uri);
 

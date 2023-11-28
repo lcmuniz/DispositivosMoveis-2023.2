@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 import 'package:receitas/models/receita.dart';
 
 const receitasDisponiveis = [
